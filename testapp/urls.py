@@ -4,9 +4,9 @@ from . import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', views.TestPage.as_view(), name='test'),
-    url(r'^band/$', views.band, name='band'),
-    url(r'^band/(?P<id>\d+)$', views.single, name='sigle'),
+    url(r'^test/$', views.TestPage.as_view(), name='test'),
+    url(r'^$', views.band, name='band'),
+    url(r'^(?P<id>\d+)$', views.single, name='single'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

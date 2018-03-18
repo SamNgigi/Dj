@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3>{{test}}</h3>
+  <div class="container">
+    <h3>{{test}}</h3>
+    {% for band in bands  %}
+      <p><a href="{% url 'Test:single' id=band.pk%}">{{band.name}}</a></p>
+    {% endfor %}
+  </div>
 {% endblock %}

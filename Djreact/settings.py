@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Djreact.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dj',
+        'NAME': 'djex',
         'USER': 'sam',
         'PASSWORD': 'Sam'
     }
