@@ -1,11 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Band
+
+from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from .serializers import BandSerializer
 # Create your views here.
 
 
 class TestPage(TemplateView):
     template_name = 'test.html'
+
+
+class BandDetail(RetrieveUpdateDestroyAPIView):
+    queryset = Band.objects.all()
+    serializer_class = BandSerializer
 
 
 def band(request):
