@@ -17,6 +17,8 @@
         <div class="col-12 text-center">
           <p>{{band.bio}}</p>
           <p>This was posted at {{band.date_added}}</p>
+
+          <span><a href="{% url 'Test:band_details_api' pk=band.pk%}">drf view</a></span>- <span><a href="/api/{{band.pk}}.json"> json view</a></span>
         </div>
       </div>
     </div>
