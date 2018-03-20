@@ -25,5 +25,6 @@ router.register(r'apis', TestViewSet, base_name='testapis')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('testapp.urls', namespace='Test')),
+    url(r'serializer/', include('api.urls', namespace='Serial')),
     url(r'^Apis/', include(router.urls)),
 ]
