@@ -6,8 +6,8 @@
 from django.http import Http404
 # from django.views.decorators.csrf import csrf_exempt
 
-from .models import ApiTest
-from .serializers import ApiTestSerializer
+from .models import ApiTest, Item
+from .serializers import ApiTestSerializer, ItemSerializer
 
 from rest_framework import status
 # from rest_framework.decorators import api_view
@@ -82,6 +82,7 @@ class ApiTestDetails(APIView):
 class TestViewSet(viewsets.ViewSet):
     def list(self, request):
         return Response('Success!')
+
     # def list(self, request):
     #     api_test = ApiTest.objects.all()
     #     apiSerializer = ApiTestSerializer(api_test, many=True)
@@ -91,8 +92,13 @@ class TestViewSet(viewsets.ViewSet):
     #     api_test = ApiTest.objects.get_object_or_404(pk=pk)
     #     apiSerializer = ApiTestSerializer(api_test)
     #     return Response(apiSerializer.data)
+    #
+    #     pass
 
-        # pass
+
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
 
 
 """

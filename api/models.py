@@ -22,3 +22,8 @@ class ApiTest(models.Model):
 
     class Meta:
         ordering = ('created',)
+
+
+class Item(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)

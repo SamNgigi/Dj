@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from api.views import TestViewSet
+from api.views import ItemViewSet, TestViewSet
 
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'viewset', TestViewSet, base_name='viewset')
+router.register(r'item', ItemViewSet, base_name='item')
 
 urlpatterns = [
     url(r'^Apis/', include(router.urls)),
@@ -28,3 +29,4 @@ urlpatterns = [
     url(r'', include('testapp.urls', namespace='Test')),
     url(r'serializer/', include('api.urls', namespace='Serial')),
 ]
+# urlpatterns += router.urls
