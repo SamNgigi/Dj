@@ -17,14 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from api.views import TestViewSet
 
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
 
-router = routers .DefaultRouter()
-router.register(r'apis', TestViewSet, base_name='testapis')
+router = DefaultRouter()
+router.register(r'viewset', TestViewSet, base_name='viewset')
 
 urlpatterns = [
+    url(r'^Apis/', include(router.urls)),
     url(r'^admin/', admin.site.urls),
     url(r'', include('testapp.urls', namespace='Test')),
     url(r'serializer/', include('api.urls', namespace='Serial')),
-    url(r'^Apis/', include(router.urls)),
 ]
