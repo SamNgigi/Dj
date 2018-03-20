@@ -5,7 +5,7 @@ import 'jquery/dist/jquery.min.js'
 import 'popper.js/dist/popper.min.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import {
-  Row, Col, Card, CardBody, CardTitle, CardText
+  Row, Col, Card, CardBody, CardTitle, CardText, CardImg
 } from 'reactstrap'
 import './index.css'
 class ApiTest extends React.Component{
@@ -43,9 +43,11 @@ class ContentItem extends React.Component{
   render(){
     return(
       <Row className="content">
+        <Col xs="3"></Col>
         <Col xs="6">
           <Card>
-            <CardBody>
+            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"></CardImg>
+            <CardBody className="text-center">
               <CardTitle>
                 {this.props.item.title}
               </CardTitle>
@@ -55,6 +57,7 @@ class ContentItem extends React.Component{
             </CardBody>
           </Card>
         </Col>
+        <Col xs="3"></Col>
       </Row>
     )
   }
