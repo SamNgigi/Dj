@@ -27,3 +27,10 @@ class ApiTest(models.Model):
 class Item(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='imgs')
+
+    """
+    Image placeholder
+
+    https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180
+    """

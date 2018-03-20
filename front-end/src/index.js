@@ -46,7 +46,7 @@ class ContentItem extends React.Component{
         <Col xs="3"></Col>
         <Col xs="6">
           <Card>
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"></CardImg>
+            <CardImg top width="100%" src={this.props.item.image}></CardImg>
             <CardBody className="text-center">
               <CardTitle>
                 {this.props.item.title}
