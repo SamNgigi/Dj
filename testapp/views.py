@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .models import Band
 
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
+
 from .serializers import BandSerializer
 # Create your views here.
 

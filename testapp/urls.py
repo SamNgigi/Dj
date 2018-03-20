@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
-
 urlpatterns = [
     url(r'^test/$', views.TestPage.as_view(), name='test'),
     url(r'^$', views.band, name='band'),
