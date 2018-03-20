@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery/dist/jquery.min.js'
 import 'popper.js/dist/popper.min.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
-
+import {
+  Row, Col, Card, CardBody, CardTitle, CardText
+} from 'reactstrap'
+import './index.css'
 class ApiTest extends React.Component{
   constructor() {
     // Seems we need super() for our this.state to work.
@@ -40,7 +42,20 @@ class ApiTest extends React.Component{
 class ContentItem extends React.Component{
   render(){
     return(
-        <h1>{this.props.item.title}</h1>
+      <Row className="content">
+        <Col xs="6">
+          <Card>
+            <CardBody>
+              <CardTitle>
+                {this.props.item.title}
+              </CardTitle>
+              <CardText>
+                {this.props.item.description}
+              </CardText>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     )
   }
 }
