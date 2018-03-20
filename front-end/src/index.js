@@ -39,29 +39,27 @@ class ApiTest extends React.Component{
     );
   }
 }
-class ContentItem extends React.Component{
-  render(){
-    return(
-      <Row className="content">
-        <Col xs="3"></Col>
-        <Col xs="6">
-          <Card>
-            <CardImg top width="100%" src={this.props.item.image}></CardImg>
-            <CardBody className="text-center">
-              <CardTitle>
-                {this.props.item.title}
-              </CardTitle>
-              <CardText>
-                {this.props.item.description}
-              </CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col xs="3"></Col>
-      </Row>
-    )
-  }
-}
+
+const ContentItem = ({item})=>(
+  <Row className="content">
+    <Col xs="3"></Col>
+    <Col xs="12" sm="6">
+      <Card>
+        <CardImg top width="100%" src={item.image}></CardImg>
+        <CardBody className="text-center">
+          <CardTitle>
+            {item.title}
+          </CardTitle>
+          <CardText>
+            {item.description}
+          </CardText>
+        </CardBody>
+      </Card>
+    </Col>
+    <Col xs="3"></Col>
+  </Row>
+)
+
 
 
 ReactDOM.render(
