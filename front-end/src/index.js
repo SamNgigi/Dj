@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'jquery/dist/jquery.min.js'
+import 'popper.js/dist/popper.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 class ApiTest extends React.Component{
   constructor() {
@@ -24,17 +29,22 @@ class ApiTest extends React.Component{
       <h1>Hii ndio shida</h1>
           {this.state.items.map(function (item, index) {
             return (
-              <div key={index}>
-                <h1>{item.title }</h1>
-                <p>{item.description}</p>
-              </div>
+              <ContentItem item={item} key={index}/>
             )
           }
         )}
       </ul>
+    );
+  }
+}
+class ContentItem extends React.Component{
+  render(){
+    return(
+        <h1>{this.props.item.title}</h1>
     )
   }
 }
+
 
 ReactDOM.render(
   <ApiTest/>,
